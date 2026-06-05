@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Seal &amp; Sign — Document Studio</title>
+<meta name="theme-color" content="#9c3526">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Seal & Sign">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link id="manifest" rel="manifest">
+<style>
+  .install-btn{appearance:none;border:1.5px solid var(--seal);background:#fff;color:var(--seal);
+    font-family:inherit;font-weight:700;font-size:12.5px;border-radius:30px;padding:7px 13px;
+    cursor:pointer;display:inline-flex;align-items:center;gap:7px;margin-left:10px;}
+  .install-btn svg{width:14px;height:14px;}
+  .install-btn:active{transform:translateY(1px);}
+  #iosSheet{position:fixed;inset:0;z-index:80;background:rgba(20,24,28,.55);
+    display:none;align-items:flex-end;justify-content:center;}
+  #iosSheet.show{display:flex;}
+  #iosSheet .card{background:var(--paper);border-radius:18px 18px 0 0;max-width:460px;width:100%;
+    padding:22px 22px 30px;box-shadow:var(--shadow);}
+  #iosSheet h3{font-family:'Fraunces',serif;margin:0 0 4px;font-size:20px;color:var(--ink);}
+  #iosSheet p{margin:0 0 16px;color:var(--ink-soft);font-size:13.5px;}
+  #iosSheet ol{margin:0;padding-left:20px;color:var(--ink);font-size:14px;line-height:1.9;}
+  #iosSheet .share{display:inline-flex;width:20px;height:20px;vertical-align:-4px;color:var(--seal);}
+  #iosSheet button{margin-top:18px;width:100%;border:none;background:var(--ink);color:#f4efe4;
+    font-family:inherit;font-weight:600;font-size:14px;padding:12px;border-radius:10px;cursor:pointer;}
+  @media(max-width:760px){.install-btn{margin-left:0;margin-top:6px;}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<style>
+  :root{
+    --paper:#f3efe5;--paper-2:#ece7d9;--ink:#20262e;--ink-soft:#525a64;--line:#d8d1c0;
+    --seal:#9c3526;--seal-2:#b9402e;--gold:#9a7b3f;--ok:#2f6f4f;
+    --shadow:0 18px 40px -22px rgba(32,38,46,.55);--radius:14px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Archivo',system-ui,sans-serif;color:var(--ink);
+    background:
+      radial-gradient(900px 500px at 85% -10%, #fbf8f0 0%, transparent 60%),
+      radial-gradient(700px 600px at -10% 110%, #efe9da 0%, transparent 55%),
+      var(--paper);
+    min-height:100vh;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  header.app{position:relative;z-index:2;padding:22px 20px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .crest{width:46px;height:46px;border-radius:50%;flex:none;border:2px solid var(--seal);display:grid;place-items:center;color:var(--seal);background:radial-gradient(circle at 50% 35%, #fff6, transparent 60%);box-shadow:inset 0 0 0 3px #fff8, 0 2px 8px rgba(156,53,38,.25);transform:rotate(-7deg);}
+  .crest svg{width:26px;height:26px;}
+  .titles h1{font-family:'Fraunces',serif;font-weight:900;font-size:26px;line-height:1;margin:0;letter-spacing:-.5px;}
+  .titles p{margin:4px 0 0;color:var(--ink-soft);font-size:13px;letter-spacing:.2px;}
+  .saved-pill{margin-left:auto;font-size:12px;color:var(--ok);background:#e7f0ea;border:1px solid #cfe2d6;padding:6px 11px;border-radius:30px;display:flex;align-items:center;gap:6px;}
+  .saved-pill.warn{color:#8a5a12;background:#f6eede;border-color:#e8dcc0;}
+  .saved-pill svg{width:14px;height:14px;}
+  .layout{position:relative;z-index:1;display:grid;grid-template-columns:300px 1fr;gap:0;min-height:calc(100vh - 86px);}
+  aside{border-right:1px solid var(--line);padding:18px 16px 40px;background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,0));overflow:auto;}
+  .panel{margin-bottom:22px;}
+  .panel h2{font-family:'Fraunces',serif;font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:var(--seal);margin:0 0 10px;font-weight:600;display:flex;align-items:center;gap:8px;}
+  .panel h2::after{content:"";flex:1;height:1px;background:var(--line);}
+  .btn{appearance:none;border:none;cursor:pointer;font-family:inherit;font-weight:600;border-radius:10px;padding:12px 14px;font-size:14px;width:100%;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform .12s ease, box-shadow .2s ease, background .2s ease;}
+  .btn svg{width:17px;height:17px;flex:none;}
+  .btn:active{transform:translateY(1px) scale(.99);}
+  .btn-primary{background:var(--ink);color:#f6f2e8;box-shadow:var(--shadow);}
+  .btn-primary:hover{background:#2b323c;}
+  .btn-seal{background:var(--seal);color:#fff;box-shadow:0 10px 24px -12px rgba(156,53,38,.8);}
+  .btn-seal:hover{background:var(--seal-2);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px dashed var(--line);}
+  .btn-ghost:hover{border-color:var(--seal);color:var(--seal);}
+  .btn[disabled]{opacity:.4;cursor:not-allowed;}
+  .hint{font-size:12px;color:var(--ink-soft);line-height:1.5;margin:8px 2px 0;}
+  .asset{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:12px;background:rgba(255,255,255,.55);}
+  .asset.has{border-color:#cfe2d6;background:rgba(231,240,234,.5);}
+  .asset-top{display:flex;align-items:center;gap:11px;}
+  .thumb{width:60px;height:46px;border-radius:8px;flex:none;border:1px dashed var(--line);background:conic-gradient(#0000 90deg,#0001 0 180deg,#0000 0 270deg,#0001 0) 0 0/14px 14px,#fff;display:grid;place-items:center;overflow:hidden;}
+  .thumb img{max-width:100%;max-height:100%;object-fit:contain;}
+  .thumb span{font-size:10px;color:var(--ink-soft);text-align:center;padding:2px;}
+  .asset-meta{flex:1;min-width:0;}
+  .asset-meta .label{font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px;}
+  .asset-meta .label .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);display:none;}
+  .asset.has .asset-meta .label .dot{display:inline-block;}
+  .asset-meta .sub{font-size:11px;color:var(--ink-soft);}
+  .asset-actions{display:flex;gap:7px;margin-top:10px;}
+  .asset-actions .btn{padding:9px;font-size:12.5px;}
+  .mini{flex:1;}
+  .row2{display:flex;gap:7px;margin-top:7px;}
+  .linkbtn{background:none;border:none;color:var(--ink-soft);font-size:11.5px;cursor:pointer;text-decoration:underline;padding:2px;font-family:inherit;}
+  .linkbtn:hover{color:var(--seal);}
+  .chk{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--ink-soft);margin-top:9px;cursor:pointer;user-select:none;}
+  .chk input{accent-color:var(--seal);width:15px;height:15px;}
+  main{padding:20px;overflow:auto;display:flex;flex-direction:column;align-items:center;}
+  .stage-bar{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+  .pager{display:flex;align-items:center;gap:8px;}
+  .pager button{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:16px;color:var(--ink);display:grid;place-items:center;}
+  .pager button[disabled]{opacity:.35;cursor:not-allowed;}
+  .pager .count{font-size:13px;color:var(--ink-soft);min-width:84px;text-align:center;}
+  #stage{width:100%;max-width:920px;display:grid;place-items:center;}
+  .empty{width:100%;border:2px dashed var(--line);border-radius:var(--radius);padding:70px 24px;text-align:center;color:var(--ink-soft);background:rgba(255,255,255,.4);}
+  .empty svg{width:54px;height:54px;color:var(--seal);opacity:.7;margin-bottom:12px;}
+  .empty h3{font-family:'Fraunces',serif;color:var(--ink);font-size:20px;margin:0 0 6px;}
+  .empty p{margin:0 auto;max-width:380px;font-size:13.5px;line-height:1.6;}
+  .surface-wrap{position:relative;box-shadow:var(--shadow);border-radius:6px;overflow:hidden;background:#fff;}
+  .surface-wrap canvas, .surface-wrap img.docimg{display:block;width:100%;height:auto;}
+  .ovl{position:absolute;cursor:grab;touch-action:none;border:1.5px solid transparent;border-radius:4px;}
+  .ovl.selected{border-color:var(--seal);box-shadow:0 0 0 2px rgba(156,53,38,.18);}
+  .ovl img{width:100%;height:100%;display:block;pointer-events:none;-webkit-user-drag:none;}
+  .ovl .handle{position:absolute;width:22px;height:22px;right:-11px;bottom:-11px;border-radius:50%;background:var(--seal);border:2px solid #fff;cursor:nwse-resize;display:none;box-shadow:0 2px 6px rgba(0,0,0,.25);}
+  .ovl .del{position:absolute;width:22px;height:22px;right:-11px;top:-11px;border-radius:50%;background:var(--ink);color:#fff;border:2px solid #fff;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:13px;line-height:1;}
+  .ovl.selected .handle, .ovl.selected .del{display:flex;}
+  #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#f4efe4;padding:12px 18px;border-radius:10px;font-size:13.5px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.3s;z-index:50;max-width:90vw;}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  @media (max-width:760px){.layout{grid-template-columns:1fr;}aside{border-right:none;border-bottom:1px solid var(--line);}.titles h1{font-size:22px;}.saved-pill{margin-left:0;}}
+  input[type=file]{display:none;}
+</style>
+</head>
+<body>
+<header class="app">
+  <div class="crest" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.8 7.2 16.7l.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
+  <div class="titles">
+    <h1>Seal &amp; Sign</h1>
+    <p>Your letterhead, stamp &amp; signature stay saved. Just add a document.</p>
+  </div>
+  <div class="saved-pill" id="savedPill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg><span id="savedText">Checking storage…</span></div>
+<button id="installBtn" class="install-btn" style="display:none;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+  Add to Home Screen
+</button>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="panel">
+      <h2>1 · Document</h2>
+      <button class="btn btn-primary" id="uploadDocBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L8 8m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>Upload PDF or image</button>
+      <p class="hint">Documents aren't saved — only your reusable assets below are.</p>
+    </div>
+
+    <div class="panel">
+      <h2>2 · Your saved assets</h2>
+
+      <div class="asset" data-asset="letterhead">
+        <div class="asset-top">
+          <div class="thumb"><span>Letterhead</span></div>
+          <div class="asset-meta"><div class="label">Letterhead <span class="dot"></span></div><div class="sub">Top-of-page banner</div></div>
+        </div>
+        <div class="asset-actions"><button class="btn btn-ghost mini up">Upload</button><button class="btn btn-seal mini add" disabled>Place</button></div>
+      </div>
+
+      <div class="asset" data-asset="stamp">
+        <div class="asset-top">
+          <div class="thumb"><span>Stamp</span></div>
+          <div class="asset-meta"><div class="label">Stamp / Seal <span class="dot"></span></div><div class="sub">PNG works best</div></div>
+        </div>
+        <div class="asset-actions"><button class="btn btn-ghost mini up">Upload</button><button class="btn btn-seal mini add" disabled>Place</button></div>
+        <label class="chk"><input type="checkbox" class="whitekey"> Remove white background</label>
+      </div>
+
+      <div class="asset" data-asset="signature">
+        <div class="asset-top">
+          <div class="thumb"><span>Signature</span></div>
+          <div class="asset-meta"><div class="label">Signature <span class="dot"></span></div><div class="sub">PNG works best</div></div>
+        </div>
+        <div class="asset-actions"><button class="btn btn-ghost mini up">Upload</button><button class="btn btn-seal mini add" disabled>Place</button></div>
+        <label class="chk"><input type="checkbox" class="whitekey"> Remove white background</label>
+      </div>
+
+      <div class="row2">
+        <button class="linkbtn" id="forgetAll">Forget all saved assets</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>3 · Finish</h2>
+      <button class="btn btn-primary" id="exportBtn" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>Export PDF</button>
+      <p class="hint">Tap a placed item to move or resize. The red dot scales, the dark dot deletes. Positions are remembered.</p>
+    </div>
+  </aside>
+
+  <main>
+    <div class="stage-bar" id="stageBar" style="display:none;">
+      <div class="pager"><button id="prevPage" disabled>‹</button><div class="count" id="pageCount">Page 1</div><button id="nextPage" disabled>›</button></div>
+      <button class="btn btn-ghost" id="clearPage" style="width:auto;padding:10px 14px;">Clear page</button>
+    </div>
+    <div id="stage">
+      <div class="empty" id="empty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M14 3v5h5"/></svg>
+        <h3>No document yet</h3>
+        <p>Upload a PDF or image to begin. Your saved assets are ready to drop on — set them up once and you'll never re-upload them.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<input type="file" id="docInput" accept="application/pdf,image/*" />
+<input type="file" id="assetInput" accept="image/*" />
+<div id="toast"></div>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+/* ----------------- IndexedDB persistence ----------------- */
+const DB_NAME="sealsign", STORE="kv";
+let dbReady=false;
+function openDB(){
+  return new Promise((res,rej)=>{
+    try{
+      const r = indexedDB.open(DB_NAME,1);
+      r.onupgradeneeded = ()=>{ r.result.createObjectStore(STORE); };
+      r.onsuccess = ()=>res(r.result);
+      r.onerror = ()=>rej(r.error);
+    }catch(e){ rej(e); }
+  });
+}
+async function idbSet(k,v){ const db=await openDB(); return new Promise((res,rej)=>{const t=db.transaction(STORE,"readwrite");t.objectStore(STORE).put(v,k);t.oncomplete=res;t.onerror=()=>rej(t.error);}); }
+async function idbGet(k){ const db=await openDB(); return new Promise((res,rej)=>{const t=db.transaction(STORE,"readonly");const rq=t.objectStore(STORE).get(k);rq.onsuccess=()=>res(rq.result);rq.onerror=()=>rej(rq.error);}); }
+async function idbDel(k){ const db=await openDB(); return new Promise((res,rej)=>{const t=db.transaction(STORE,"readwrite");t.objectStore(STORE).delete(k);t.oncomplete=res;t.onerror=()=>rej(t.error);}); }
+
+/* ----------------- State ----------------- */
+const state = {
+  type:null, pdf:null, pdfBytes:null, imageDataUrl:null,
+  numPages:1, page:0,
+  assets:{ letterhead:null, stamp:null, signature:null },
+  lastPos:{ letterhead:null, stamp:null, signature:null },
+  placements:[], selected:null,
+};
+let idSeq=1;
+const surfaceSize={w:0,h:0};
+const $=s=>document.querySelector(s);
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),2600);};
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+
+/* ----------------- Boot: restore saved assets ----------------- */
+(async function boot(){
+  try{
+    await openDB(); dbReady=true;
+    for(const type of ["letterhead","stamp","signature"]){
+      const v = await idbGet("asset:"+type);
+      if(v){ applyAsset(type, v.src); if(v.white){ const c=document.querySelector(`.asset[data-asset="${type}"] .whitekey`); if(c) c.checked=true; } }
+      const lp = await idbGet("pos:"+type);
+      if(lp) state.lastPos[type]=lp;
+    }
+    const any = state.assets.letterhead||state.assets.stamp||state.assets.signature;
+    setSaved(true, any ? "Saved assets loaded" : "Storage ready");
+  }catch(e){
+    dbReady=false;
+    setSaved(false, "Preview mode — host to save");
+  }
+})();
+
+function setSaved(ok, text){
+  const pill=$("#savedPill"); $("#savedText").textContent=text;
+  pill.classList.toggle("warn", !ok);
+}
+function applyAsset(type, src){
+  state.assets[type]=src;
+  const card=document.querySelector(`.asset[data-asset="${type}"]`);
+  card.classList.add("has");
+  card.querySelector(".thumb").innerHTML=`<img src="${src}" alt="">`;
+  card.querySelector(".add").disabled=false;
+}
+
+/* ----------------- Document upload ----------------- */
+$("#uploadDocBtn").addEventListener("click",()=>$("#docInput").click());
+$("#docInput").addEventListener("change", async e=>{
+  const file=e.target.files[0]; if(!file) return;
+  try{
+    state.placements=[]; state.selected=null; state.page=0;
+    if(file.type==="application/pdf"){
+      const buf=await file.arrayBuffer();
+      state.pdfBytes=buf.slice(0);
+      state.pdf=await pdfjsLib.getDocument({data:buf.slice(0)}).promise;
+      state.numPages=state.pdf.numPages; state.type="pdf";
+    } else if(file.type.startsWith("image/")){
+      state.imageDataUrl=await readAsDataURL(file); state.type="image"; state.numPages=1;
+    } else { toast("Please choose a PDF or image."); return; }
+    $("#empty").style.display="none"; $("#stageBar").style.display="flex"; $("#exportBtn").disabled=false;
+    await renderPage(); toast("Document loaded.");
+  }catch(err){ console.error(err); toast("Couldn't open that file."); }
+  e.target.value="";
+});
+
+/* ----------------- Asset upload (saves to IndexedDB) ----------------- */
+let pendingAsset=null;
+document.querySelectorAll(".asset .up").forEach(btn=>{
+  btn.addEventListener("click",()=>{ pendingAsset=btn.closest(".asset").dataset.asset; $("#assetInput").click(); });
+});
+$("#assetInput").addEventListener("change", async e=>{
+  const file=e.target.files[0]; if(!file||!pendingAsset) return;
+  try{
+    let url=await readAsDataURL(file);
+    const card=document.querySelector(`.asset[data-asset="${pendingAsset}"]`);
+    const wk=card.querySelector(".whitekey");
+    const white = wk && wk.checked;
+    if(white){ url=await removeWhite(url); }
+    applyAsset(pendingAsset, url);
+    if(dbReady){ try{ await idbSet("asset:"+pendingAsset, {src:url, white:!!white}); toast(cap(pendingAsset)+" saved ✓"); setSaved(true,"Saved assets loaded"); }
+      catch(err){ toast(cap(pendingAsset)+" added (not saved)"); } }
+    else { toast(cap(pendingAsset)+" added — host the app to save it"); }
+  }catch(err){ console.error(err); toast("Couldn't load that image."); }
+  e.target.value="";
+});
+
+$("#forgetAll").addEventListener("click", async ()=>{
+  if(!confirm("Forget your saved letterhead, stamp and signature on this device?")) return;
+  for(const t of ["letterhead","stamp","signature"]){
+    state.assets[t]=null;
+    const card=document.querySelector(`.asset[data-asset="${t}"]`);
+    card.classList.remove("has");
+    card.querySelector(".thumb").innerHTML=`<span>${cap(t)}</span>`;
+    card.querySelector(".add").disabled=true;
+    if(dbReady){ try{ await idbDel("asset:"+t); await idbDel("pos:"+t); }catch(e){} }
+  }
+  toast("All saved assets forgotten.");
+});
+
+/* ----------------- Placement ----------------- */
+document.querySelectorAll(".asset .add").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const type=btn.closest(".asset").dataset.asset;
+    if(!state.assets[type]){ toast("Upload "+type+" first."); return; }
+    if(!state.type){ toast("Upload a document first."); return; }
+    addPlacement(type);
+  });
+});
+function addPlacement(type){
+  const saved=state.lastPos[type];
+  const img=new Image();
+  img.onload=()=>{
+    let rx,ry,rw,rh;
+    if(saved){ ({rx,ry,rw,rh}=saved); }
+    else{
+      const ar=img.naturalWidth/img.naturalHeight||3;
+      if(type==="letterhead"){ rw=0.92; rh=(rw*surfaceSize.w/ar)/surfaceSize.h; if(rh>0.22) rh=0.18; rx=(1-rw)/2; ry=0.03; }
+      else{ rw=0.26; rh=(rw*surfaceSize.w/ar)/surfaceSize.h; rx=type==="signature"?0.12:0.6; ry=0.74; }
+    }
+    const p={id:idSeq++,type,page:state.page,rx,ry,rw,rh,src:state.assets[type]};
+    state.placements.push(p); state.selected=p.id; drawOverlays();
+    toast(cap(type)+" placed.");
+  };
+  img.src=state.assets[type];
+}
+
+/* ----------------- Render ----------------- */
+async function renderPage(){
+  const stage=$("#stage"); stage.innerHTML="";
+  const wrap=document.createElement("div"); wrap.className="surface-wrap"; wrap.id="surface"; stage.appendChild(wrap);
+  const availW=Math.min(stage.clientWidth||900,920);
+  if(state.type==="pdf"){
+    const page=await state.pdf.getPage(state.page+1);
+    const vp1=page.getViewport({scale:1});
+    const displayScale=Math.min(availW/vp1.width,2);
+    const dpr=window.devicePixelRatio||1;
+    const rv=page.getViewport({scale:displayScale*dpr});
+    const canvas=document.createElement("canvas");
+    canvas.width=rv.width; canvas.height=rv.height;
+    canvas.style.width=(vp1.width*displayScale)+"px"; canvas.style.height=(vp1.height*displayScale)+"px";
+    wrap.appendChild(canvas);
+    await page.render({canvasContext:canvas.getContext("2d"),viewport:rv}).promise;
+    surfaceSize.w=vp1.width*displayScale; surfaceSize.h=vp1.height*displayScale;
+  } else {
+    const img=document.createElement("img"); img.className="docimg"; img.src=state.imageDataUrl;
+    await new Promise(r=>{img.onload=r;});
+    const ratio=img.naturalHeight/img.naturalWidth;
+    const w=Math.min(availW,img.naturalWidth);
+    img.style.width=w+"px"; wrap.appendChild(img);
+    surfaceSize.w=w; surfaceSize.h=w*ratio;
+  }
+  updatePager(); drawOverlays();
+}
+function drawOverlays(){
+  const wrap=$("#surface"); if(!wrap) return;
+  wrap.querySelectorAll(".ovl").forEach(n=>n.remove());
+  state.placements.filter(p=>p.page===state.page).forEach(p=>{
+    const el=document.createElement("div");
+    el.className="ovl"+(state.selected===p.id?" selected":"");
+    el.style.left=(p.rx*surfaceSize.w)+"px"; el.style.top=(p.ry*surfaceSize.h)+"px";
+    el.style.width=(p.rw*surfaceSize.w)+"px"; el.style.height=(p.rh*surfaceSize.h)+"px";
+    el.dataset.id=p.id;
+    el.innerHTML=`<img src="${p.src}"><div class="del">×</div><div class="handle"></div>`;
+    wrap.appendChild(el); attachDrag(el,p);
+  });
+}
+
+/* ----------------- Drag / resize + remember position ----------------- */
+async function savePos(p){
+  state.lastPos[p.type]={rx:p.rx,ry:p.ry,rw:p.rw,rh:p.rh};
+  if(dbReady){ try{ await idbSet("pos:"+p.type, state.lastPos[p.type]); }catch(e){} }
+}
+function attachDrag(el,p){
+  const del=el.querySelector(".del"), handle=el.querySelector(".handle");
+  del.addEventListener("pointerdown",ev=>{ ev.stopPropagation(); state.placements=state.placements.filter(x=>x.id!==p.id); state.selected=null; drawOverlays(); });
+  el.addEventListener("pointerdown",ev=>{
+    if(ev.target===handle||ev.target===del) return;
+    ev.preventDefault(); state.selected=p.id; drawOverlays();
+    const start=pointer(ev), orig={left:p.rx*surfaceSize.w, top:p.ry*surfaceSize.h};
+    const move=mv=>{
+      const cur=pointer(mv);
+      let nl=clamp(orig.left+(cur.x-start.x),-el.offsetWidth*0.5,surfaceSize.w-el.offsetWidth*0.5);
+      let nt=clamp(orig.top+(cur.y-start.y),-el.offsetHeight*0.5,surfaceSize.h-el.offsetHeight*0.5);
+      p.rx=nl/surfaceSize.w; p.ry=nt/surfaceSize.h; el.style.left=nl+"px"; el.style.top=nt+"px";
+    };
+    const up=()=>{window.removeEventListener("pointermove",move);window.removeEventListener("pointerup",up);savePos(p);};
+    window.addEventListener("pointermove",move); window.addEventListener("pointerup",up);
+  });
+  handle.addEventListener("pointerdown",ev=>{
+    ev.stopPropagation(); ev.preventDefault(); state.selected=p.id;
+    const start=pointer(ev), ow=el.offsetWidth, oh=el.offsetHeight, ar=ow/oh;
+    const move=mv=>{
+      const cur=pointer(mv);
+      let nw=clamp(ow+(cur.x-start.x),28,surfaceSize.w*1.1); let nh=nw/ar;
+      p.rw=nw/surfaceSize.w; p.rh=nh/surfaceSize.h; el.style.width=nw+"px"; el.style.height=nh+"px";
+    };
+    const up=()=>{window.removeEventListener("pointermove",move);window.removeEventListener("pointerup",up);savePos(p);};
+    window.addEventListener("pointermove",move); window.addEventListener("pointerup",up);
+  });
+}
+function pointer(e){return {x:e.clientX,y:e.clientY};}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+$("#stage").addEventListener("pointerdown",ev=>{ if(ev.target.id==="surface"||ev.target.tagName==="CANVAS"||ev.target.classList.contains("docimg")){state.selected=null;drawOverlays();} });
+
+/* ----------------- Pager ----------------- */
+function updatePager(){
+  $("#pageCount").textContent = state.type==="pdf"?`Page ${state.page+1} / ${state.numPages}`:"Single page";
+  $("#prevPage").disabled=state.page<=0; $("#nextPage").disabled=state.page>=state.numPages-1;
+}
+$("#prevPage").addEventListener("click",async()=>{if(state.page>0){state.page--;await renderPage();}});
+$("#nextPage").addEventListener("click",async()=>{if(state.page<state.numPages-1){state.page++;await renderPage();}});
+$("#clearPage").addEventListener("click",()=>{state.placements=state.placements.filter(p=>p.page!==state.page);state.selected=null;drawOverlays();toast("Cleared this page.");});
+window.addEventListener("resize",()=>{if(state.type)renderPage();});
+
+/* ----------------- Helpers ----------------- */
+function readAsDataURL(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file);});}
+function removeWhite(dataUrl){
+  return new Promise(res=>{
+    const img=new Image();
+    img.onload=()=>{
+      const c=document.createElement("canvas"); c.width=img.naturalWidth; c.height=img.naturalHeight;
+      const ctx=c.getContext("2d"); ctx.drawImage(img,0,0);
+      const d=ctx.getImageData(0,0,c.width,c.height), a=d.data;
+      for(let i=0;i<a.length;i+=4){
+        if(a[i]>232&&a[i+1]>232&&a[i+2]>232){a[i+3]=0;}
+        else if(a[i]>200&&a[i+1]>200&&a[i+2]>200){a[i+3]=Math.min(a[i+3],90);}
+      }
+      ctx.putImageData(d,0,0); res(c.toDataURL("image/png"));
+    };
+    img.src=dataUrl;
+  });
+}
+function dataUrlToBytes(dataUrl){const b=atob(dataUrl.split(",")[1]);const arr=new Uint8Array(b.length);for(let i=0;i<b.length;i++)arr[i]=b.charCodeAt(i);return arr;}
+
+/* ----------------- Export ----------------- */
+$("#exportBtn").addEventListener("click", async ()=>{
+  if(!state.type) return;
+  const btn=$("#exportBtn"), old=btn.innerHTML; btn.disabled=true; btn.textContent="Building PDF…";
+  try{
+    const {PDFDocument}=PDFLib; let out;
+    if(state.type==="pdf"){
+      out=await PDFDocument.load(state.pdfBytes); const pages=out.getPages();
+      for(const p of state.placements){
+        const page=pages[p.page]; if(!page) continue;
+        const {width:pw,height:ph}=page.getSize();
+        const img=await embed(out,p.src);
+        const w=p.rw*pw, h=p.rh*ph, x=p.rx*pw, y=ph-(p.ry*ph)-h;
+        page.drawImage(img,{x,y,width:w,height:h});
+      }
+    } else {
+      out=await PDFDocument.create();
+      const docImg=await embed(out,state.imageDataUrl);
+      const pw=docImg.width, ph=docImg.height;
+      const page=out.addPage([pw,ph]); page.drawImage(docImg,{x:0,y:0,width:pw,height:ph});
+      for(const p of state.placements){
+        const img=await embed(out,p.src);
+        const w=p.rw*pw,h=p.rh*ph,x=p.rx*pw,y=ph-(p.ry*ph)-h;
+        page.drawImage(img,{x,y,width:w,height:h});
+      }
+    }
+    const bytes=await out.save();
+    const blob=new Blob([bytes],{type:"application/pdf"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a"); a.href=url; a.download="signed-document.pdf"; a.click();
+    setTimeout(()=>URL.revokeObjectURL(url),4000);
+    toast("Exported signed-document.pdf");
+  }catch(err){ console.error(err); toast("Export failed — try PNG assets."); }
+  btn.disabled=false; btn.innerHTML=old;
+});
+async function embed(doc,dataUrl){
+  if(dataUrl.startsWith("data:image/png")) return await doc.embedPng(dataUrlToBytes(dataUrl));
+  if(dataUrl.startsWith("data:image/jpeg")||dataUrl.startsWith("data:image/jpg")) return await doc.embedJpg(dataUrlToBytes(dataUrl));
+  const png=await toPng(dataUrl); return await doc.embedPng(dataUrlToBytes(png));
+}
+function toPng(dataUrl){return new Promise(res=>{const i=new Image();i.onload=()=>{const c=document.createElement("canvas");c.width=i.naturalWidth;c.height=i.naturalHeight;c.getContext("2d").drawImage(i,0,0);res(c.toDataURL("image/png"));};i.src=dataUrl;});}
+</script>
+<div id="iosSheet"><div class="card">
+  <h3>Add to your Home Screen</h3>
+  <p>Install Seal &amp; Sign so it opens like an app — saved assets included.</p>
+  <ol>
+    <li>Tap the <strong>Share</strong> icon
+      <svg class="share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4m0 0L8 8m4-4l4 4"/><path d="M6 12v6a2 2 0 002 2h8a2 2 0 002-2v-6"/></svg>
+      in the toolbar.</li>
+    <li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
+    <li>Tap <strong>Add</strong> — done!</li>
+  </ol>
+  <button onclick="document.getElementById('iosSheet').classList.remove('show')">Got it</button>
+</div></div>
+<script>
+(function(){
+  const ICON192 = "data:image/png;base64,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";
+  const ICON512 = "data:image/png;base64,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";
+  try{
+    const base = location.href.split('#')[0].split('?')[0];
+    const scope = base.substring(0, base.lastIndexOf('/')+1);
+    const m = {
+      name:"Seal & Sign", short_name:"Seal & Sign",
+      start_url: base, scope: scope,
+      display:"standalone", orientation:"portrait",
+      background_color:"#f3efe5", theme_color:"#9c3526",
+      icons:[
+        {src:ICON192, sizes:"192x192", type:"image/png", purpose:"any maskable"},
+        {src:ICON512, sizes:"512x512", type:"image/png", purpose:"any maskable"}
+      ]
+    };
+    const blob = new Blob([JSON.stringify(m)], {type:"application/manifest+json"});
+    const link = document.getElementById('manifest');
+    if(link) link.href = URL.createObjectURL(blob);
+  }catch(e){}
+
+  const installBtn = document.getElementById('installBtn');
+  const iosSheet = document.getElementById('iosSheet');
+  const ua = navigator.userAgent || "";
+  const isIOS = /iphone|ipad|ipod/i.test(ua) || (/(macintosh)/i.test(ua) && 'ontouchend' in document);
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  let deferred = null;
+
+  if(!isStandalone && isIOS && installBtn) installBtn.style.display = '';
+
+  window.addEventListener('beforeinstallprompt', e=>{
+    e.preventDefault(); deferred = e;
+    if(!isStandalone && installBtn) installBtn.style.display = '';
+  });
+
+  if(installBtn){
+    installBtn.addEventListener('click', async ()=>{
+      if(deferred){
+        deferred.prompt();
+        try{ await deferred.userChoice; }catch(e){}
+        deferred = null; installBtn.style.display='none'; return;
+      }
+      if(isIOS && iosSheet){ iosSheet.classList.add('show'); return; }
+      if(typeof toast === 'function')
+        toast('Open your browser menu, then choose “Install app” / “Add to Home screen”.');
+    });
+  }
+  window.addEventListener('appinstalled', ()=>{
+    if(installBtn) installBtn.style.display='none';
+    if(typeof toast === 'function') toast('Installed — look for Seal & Sign on your home screen.');
+  });
+})();
+</script>
+</body>
+</html>
