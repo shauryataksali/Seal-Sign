@@ -276,17 +276,34 @@ $("#docInput").addEventListener("change", async e=>{
   const file=e.target.files[0]; if(!file) return;
   try{
     state.placements=[]; state.selected=null; state.page=0;
-    if(file.type==="application/pdf"){
+    const name=(file.name||"").toLowerCase();
+    const isHeic=/heic|heif/i.test(file.type)||/\.(heic|heif)$/.test(name);
+    const isPdf=file.type==="application/pdf"||/\.pdf$/.test(name);
+    if(isHeic){
+      state.imageDataUrl=await heicToDataURL(file); state.type="image"; state.numPages=1;
+    } else if(isPdf){
       const buf=await file.arrayBuffer();
       state.pdfBytes=buf.slice(0);
-      state.pdf=await pdfjsLib.getDocument({data:buf.slice(0)}).promise;
+      const task=pdfjsLib.getDocument({
+        data:buf.slice(0),
+        cMapUrl:"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/",
+        cMapPacked:true,
+        standardFontDataUrl:"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/standard_fonts/"
+      });
+      task.onPassword=(cb,reason)=>{ const pw=prompt(reason===1?"This PDF is password protected. Enter password:":"Wrong password — try again:"); cb(pw||""); };
+      state.pdf=await task.promise;
       state.numPages=state.pdf.numPages; state.type="pdf";
     } else if(file.type.startsWith("image/")){
       state.imageDataUrl=await readAsDataURL(file); state.type="image"; state.numPages=1;
     } else { toast("Please choose a PDF or image."); return; }
     $("#empty").style.display="none"; $("#stageBar").style.display="flex"; $("#exportBtn").disabled=false;
     await renderPage(); toast("Document loaded.");
-  }catch(err){ console.error(err); toast("Couldn't open that file."); }
+  }catch(err){
+    console.error(err);
+    if(err && err.name==="PasswordException") toast("Couldn't unlock that PDF — wrong password.");
+    else if(/heic/i.test(String(err && err.message))) toast("Couldn't convert that iPhone photo — try a JPG or screenshot.");
+    else toast("Couldn't open that file. If it's a Word/Pages file, export it as PDF first.");
+  }
   e.target.value="";
 });
 
@@ -298,7 +315,10 @@ document.querySelectorAll(".asset .up").forEach(btn=>{
 $("#assetInput").addEventListener("change", async e=>{
   const file=e.target.files[0]; if(!file||!pendingAsset) return;
   try{
-    let url=await readAsDataURL(file);
+    const aname=(file.name||"").toLowerCase();
+    let url;
+    if(/heic|heif/i.test(file.type)||/\.(heic|heif)$/.test(aname)){ url=await heicToDataURL(file); }
+    else { url=await readAsDataURL(file); }
     const card=document.querySelector(`.asset[data-asset="${pendingAsset}"]`);
     const wk=card.querySelector(".whitekey");
     const white = wk && wk.checked;
@@ -441,6 +461,25 @@ window.addEventListener("resize",()=>{if(state.type)renderPage();});
 
 /* ----------------- Helpers ----------------- */
 function readAsDataURL(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file);});}
+let _heicLoad=null;
+function ensureHeic(){
+  if(window.heic2any) return Promise.resolve();
+  if(_heicLoad) return _heicLoad;
+  _heicLoad=new Promise((res,rej)=>{
+    const s=document.createElement("script");
+    s.src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js";
+    s.onload=()=>res(); s.onerror=()=>rej(new Error("heic-load"));
+    document.head.appendChild(s);
+  });
+  return _heicLoad;
+}
+async function heicToDataURL(file){
+  await ensureHeic();
+  if(!window.heic2any) throw new Error("heic-unavailable");
+  let blob=await heic2any({blob:file,toType:"image/jpeg",quality:0.92});
+  if(Array.isArray(blob)) blob=blob[0];
+  return await readAsDataURL(blob);
+}
 function removeWhite(dataUrl){
   return new Promise(res=>{
     const img=new Image();
